@@ -5,7 +5,8 @@ if __name__ == '__main__':
         sender = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
         n = 0
         while True:
-            messageToSend = 'Hello'+str(n + 1)
+            n += 1
+            messageToSend = 'Hello'+str(n)
             sender.sendto(str.encode(messageToSend), ('192.168.16.34', 7778))
             bytepair = sender.recvfrom(1024)
             messageReceived = bytepair[0]
