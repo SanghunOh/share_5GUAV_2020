@@ -20,7 +20,8 @@ if __name__ == '__main__':
             messagefunc(bytepair, msgprint)
             receiver.sendto(str.encode('ok'),('192.168.16.26', 7778))
             pass
-        except :  
+        except Exception as e:
+            print(e)  
             print("네트워크 접속 불량")
             pass
 
