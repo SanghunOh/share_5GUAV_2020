@@ -18,7 +18,7 @@ def receive(receiver, callback):
 if __name__ == '__main__':
     try:
         receiver = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
-        receiver.bind(("192.168.16.22",7778)) 
+        receiver.bind(("192.168.16.34",7778)) 
         while True:
             receive(receiver, callback)
     except:
