@@ -1,6 +1,5 @@
 import socket 
 
-# 메시지를 받으면 리시버에서 작동하는 함수
 def msgprint(message, addr):
     print(f'message : {message} , address : {addr}')
     return
@@ -21,7 +20,7 @@ if __name__ == '__main__':
             messagefunc(bytepair, msgprint)
             receiver.sendto(str.encode('ok'),('192.168.16.26', 7778))
             pass
-        except :  # 네트워크 접속 불량이면(즉 센더에서 받은게 없으면)
+        except :  
             print("네트워크 접속 불량")
             pass
 
