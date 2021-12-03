@@ -12,8 +12,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
 
-            "args": ["-first", "49", "-second", "30", "-third", "0"]
-
+            
         }
     ]
 }
