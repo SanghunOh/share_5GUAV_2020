@@ -1,7 +1,8 @@
 import socket 
 
 def msgprint(message, addr):
-    print(f'message : {message} , address : {addr}')
+    message = message.decode('euc-kr')
+    print(message," , ",addr)
     return
 
 def messagefunc(receive, f_callback):
