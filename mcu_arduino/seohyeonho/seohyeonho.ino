@@ -6,6 +6,8 @@ int melody[] = {
 };
 
 char x;
+void reaction(int x, int y, char z, int cnt);
+void repeat(int cnt, char z);
 
 void repeat(int cnt, char z){
   for (int i = 0; i < cnt; i++){
@@ -38,27 +40,27 @@ void loop() {
   // put your main code here, to run repeatedly:
   while (!Serial.available());
   x = Serial.readString().toInt();
-  if(x='q'){
+  if(x=='q'){
   Serial.println("프로그램을 종료할까요?");
   }
 
   
-  else if(x='f'){
+  else if(x=='f'){
   reaction(22,23,NOTE_C4,1);
   }
 
   
-  else if(x='b'){
+  else if(x=='b'){
   reaction(24,25,NOTE_G3,2);
   }
 
   
-  else if(x='r'){
+  else if(x=='r'){
   reaction(22,25,NOTE_A3,3);
   }
 
   
-  else if(x='l'){
+  else if(x=='l'){
   reaction(23,24,NOTE_B3,4);
   }
 
