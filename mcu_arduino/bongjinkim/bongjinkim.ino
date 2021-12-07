@@ -1,5 +1,6 @@
-int a, b, c, d, e, f, i, repeat;
-String x; 
+#include "pitches.h"
+int a, b, c, d, e, f, i, x;
+  
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
   Serial.begin(9600);
@@ -12,9 +13,7 @@ void setup() {
 }
 // the loop function runs over and over again forever
 void loop() {
-    while (1) {
-      
-    }
+  
 }
 void blink(){
     digitalWrite(22, a);delay(100);    
@@ -29,10 +28,14 @@ void blink(){
     digitalWrite(25, f);delay(100);    
     digitalWrite(36, f);delay(100);    
 }
+void beep(){
+  tone(BDPIN_BUZZER, NOTE_C4, 100);
+  delay(500);   
+}
 void serialEvent(){
-  x = Serial.readString();  
+  x = Serial.read();  
   Serial.println(x);
-    if (x == "f"){
+    if (x == 102){
       a = 0;
       b = 0;
       c = 1;
@@ -40,10 +43,10 @@ void serialEvent(){
       e = 1;
       f = 1;
       for( i = 0; i < 1; i++){
-        blink();
+        blink(); beep();
       }
     }
-    else if (x == "b"){
+    else if (x == 98){
       a = 1;
       b = 1;
       c = 0;
@@ -51,9 +54,10 @@ void serialEvent(){
       e = 1;
       f = 1;
       for( i = 0; i < 2; i++){
-        blink();
+        blink();beep();
+      }
     }
-    else if (x == "r"){
+    else if (x == 114){
       a = 0;
       b = 1;
       c = 1;
@@ -61,9 +65,10 @@ void serialEvent(){
       e = 1;
       f = 1;
       for( i = 0; i < 3; i++){
-        blink();
+        blink();beep();
+      }
     }
-    else if (x == "l"){
+    else if (x == 108){
       a = 1;
       b = 0;
       c = 0;
@@ -71,9 +76,10 @@ void serialEvent(){
       e = 1;
       f = 1;     
       for( i = 0; i < 4; i++){
-        blink();
+        blink();beep();
+      }
     }
-    else if (x == "q"){
+    else if (x == 113){
       a = 0;
       b = 0;
       c = 0;
@@ -81,9 +87,10 @@ void serialEvent(){
       e = 0;
       f = 1;     
       for( i = 0; i < 5; i++){
-        blink();
-    }
+        blink();beep();
+      }
+    }  
     else {
       
-  }
+    }
 }
