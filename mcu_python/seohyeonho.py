@@ -10,8 +10,9 @@ connect(115200)
 
 
 if __name__ == '__main__':
-   try:
-        while True:
+    while True:
+    
+        try:
             direction = input('Enter a direction foreward(f), backward(b), right(r), left(l): ')
             if direction == 'q' :
                 break
@@ -19,6 +20,6 @@ if __name__ == '__main__':
                 print("잘못된 방향입니다.")
                 continue
             opencr.write(bytes(direction, 'utf-8'))
-        pass
-   except Exception as e:
-        pass
+            pass
+        except Exception as e:
+            pass
