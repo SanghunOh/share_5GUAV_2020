@@ -71,11 +71,20 @@ void loop() {
  if(c == 'c'){
   digitalWrite(22, 1);
   digitalWrite(24, 1);
+  tone(BDPIN_BUZZER, NOTE_B6, 500);
+  delay(500);
+  tone(BDPIN_BUZZER, NOTE_C5, 500);
+  delay(500);
+  
   
  }
  if(c == 'd'){
   digitalWrite(23, 1);
   digitalWrite(25, 1);
+  tone(BDPIN_BUZZER, NOTE_A6, 500);
+  delay(500);
+  tone(BDPIN_BUZZER, NOTE_B2, 500);
+  delay(500);
   
  }
   }
