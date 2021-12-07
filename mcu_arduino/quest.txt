@@ -1,0 +1,14 @@
+MCU 올린 내용을 Python 컨트롤 
+
+* 해보기
+- key f : LED - 22, 23 Blink, Buzzer - ?, 1회 연속
+- key b : LED - 24, 25 Blink, Buzzer - ?, 2회 연속
+- key r : LED - 22, 25 Blink, Buzzer - ?, 3회 연속
+- key l : LED - 23, 24 Blink, Buzzer - ?, 4회 연속
+- key q : LED - wave Blink, Buzzer - ?, 5회 연속
+
+- basic statement 맞추어 작성.
+
+* 더 해보기
+- opencv panel
+
