@@ -28,7 +28,7 @@ def key_push(key) :
             # - key f : LED - 22, 23 Blink, Buzzer - ?, 1회 연속
             continue
 
-        elif key == ord('l'):
+        elif key == ord('b'):
             # - key b : LED - 24, 25 Blink, Buzzer - ?, 2회 연속
             continue
 
