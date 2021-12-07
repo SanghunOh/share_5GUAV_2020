@@ -10,15 +10,10 @@ while True:
     if key==27:
         print("프로그램 종료")        
         break
-    elif key=='102': #f
-        num
-    elif key=='98': #f
-    elif key=='114': #f
-    elif key=='108': #f
-    elif key=='113': #f
+    try:
+        num = push_dict[chr(key)]
+    except Exception as e:
+        continue
     
-    # num = push_dict[key]
-    
-    print(ord('f'),ord('b'),ord('r'),ord('l'),ord('q'))
-    # opencr.write(bytes(str(num), 'utf-8'))
+    opencr.write(bytes(str(num), 'utf-8'))
 cv2.destroyAllWindows()
