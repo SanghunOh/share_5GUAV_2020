@@ -3,16 +3,17 @@ import serial
 import time
 import cv2 as cv
 
-panel = cv.imread('./turtlebot3_logo.jpg')
+panel = cv.imread('mcu_arduino/hyunjoowhoon/Turtlebot3_logo.jpg')
 cv.imshow('arduino control', panel)
 
 
-arduino = serial.Serial(port='/dev/ttyACM0', baudrate=115200, timeout=.1)
-def write_read(x):
-    arduino.write(bytes(x, 'utf-8'))
-    time.sleep(0.05)
-    data = arduino.readline()
-    return data
+# arduino = serial.Serial(port='/dev/ttyACM0', baudrate=115200, timeout=1)
+
+# def write_read(x):
+#     arduino.write(bytes(x, 'utf-8'))
+#     time.sleep(0.05)
+#     data = arduino.readline()
+#     return data
 
 
 def key_push(key) : 
@@ -41,12 +42,17 @@ def key_push(key) :
 
         return key 
 
+
+
+
 if __name__ == '__main__':
     
 
     try:
         pushed = input("알맞은 입력을 눌러주세요.( f / b / l / r, 취소: q 혹은 esc) :  ")
         print(key_push(pushed))
+
+        cv.destroyAllWindows()
 
     except Exception as e: 
         print(e, "  라는 오류가 있어요!!!")
