@@ -1,9 +1,24 @@
 import serial
 
-opencr = serial.Serial(port='/dev/ttyACM0', baudrate =115200, timeout = 1)
 
-while True:
-    direction = input('Enter a direction foreward(f), backward(b), right(r), left(l): ')
-    if direction == 'q' :
-        break
-    opencr.write(bytes(direction, 'utf-8'))
+def connect(rate):
+    global opencr
+    opencr = serial.Serial(port='/dev/ttyACM0', baudrate = rate, timeout = 1)
+    return
+
+connect(115200)
+
+
+if __name__ == '__main__':
+   try:
+        while True:
+            direction = input('Enter a direction foreward(f), backward(b), right(r), left(l): ')
+            if direction == 'q' :
+                break
+            elif direction != 'f' | 'b' | 'r' | 'l' :
+                print("잘못된 방향입니다.")
+                continue
+            opencr.write(bytes(direction, 'utf-8'))
+        pass
+   except Exception as e:
+        pass
