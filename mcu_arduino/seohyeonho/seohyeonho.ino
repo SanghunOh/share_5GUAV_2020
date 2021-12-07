@@ -1,5 +1,22 @@
 char x;
 
+void repeat(int cnt, char z){
+  for (int i = 0; i < cnt; i++){
+  tone(BDPIN_BUZZER, z, 500);
+  delay(500);
+  noTone(BDPIN_BUZZER);
+  }
+}
+
+void reaction(int x, int y, char z, int cnt){
+  digitalWrite(x,0);
+  digitalWrite(y,0);
+  void repeat(cnt,z);
+  digitalWrite(x,1);
+  digitalWrite(y,1);
+  delay(1000);
+}
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
@@ -20,50 +37,22 @@ void loop() {
 
   
   else if(x='f'){
-  digitalWrite(22,0);
-  digitalWrite(23,0);
-  tone(BDPIN_BUZZER, NOTE_C4, 500);
-  delay(500);
-  noTone(BDPIN_BUZZER);
-  digitalWrite(22,1);
-  digitalWrite(23,1);
-  delay(1000);
+  void reaction(22,23,NOTE_C4,1)
   }
 
   
   else if(x='b'){
-  digitalWrite(24,0);
-  digitalWrite(25,0);
-  tone(BDPIN_BUZZER, NOTE_G3, 500);
-  delay(500);
-  noTone(BDPIN_BUZZER);
-  digitalWrite(24,1);
-  digitalWrite(25,1);
-  delay(1000);
+  void reaction(24,25,NOTE_G3,2)
   }
 
   
   else if(x='r'){
-  digitalWrite(22,0);
-  digitalWrite(25,0);
-  tone(BDPIN_BUZZER, NOTE_A3, 500);
-  delay(500);
-  noTone(BDPIN_BUZZER);
-  digitalWrite(22,1);
-  digitalWrite(25,1);
-  delay(1000);
+  void reaction(22,25,NOTE_A3,3)
   }
 
   
   else if(x='l'){
-  digitalWrite(23,0);
-  digitalWrite(24,0);
-  tone(BDPIN_BUZZER, NOTE_B3, 500);
-  delay(500);
-  noTone(BDPIN_BUZZER);
-  digitalWrite(23,1);
-  digitalWrite(24,1);
-  delay(1000);
+  void reaction(23,24,NOTE_B3,4)
   }
 
   
