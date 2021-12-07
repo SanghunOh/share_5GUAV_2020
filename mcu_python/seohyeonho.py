@@ -1,24 +1,28 @@
 import serial
+import cv2
 
 
 def connect(rate):
     global opencr
-    opencr = serial.Serial(port='/dev/ttyACM0', baudrate = rate, timeout = 1)
+    opencr = serial.Serial(port='/dev/ttyACM1', baudrate = rate, timeout = 1)
     return
 
 connect(115200)
-
+cv2.namedWindow('order direction')
 
 if __name__ == '__main__':
-   try:
-        while True:
-            direction = input('Enter a direction foreward(f), backward(b), right(r), left(l): ')
+    while True:
+    
+        try:
+            print('Enter a direction foreward(f), backward(b), right(r), left(l): ')
+            direction = cv2.waitKey(1)
+            # direction = input('Enter a direction foreward(f), backward(b), right(r), left(l): ')
             if direction == 'q' :
                 break
-            elif direction != 'f' | 'b' | 'r' | 'l' :
-                print("잘못된 방향입니다.")
+            elif direction == 'f' or 'b' or 'r' or 'l' :
+                opencr.write(direction.encode('ascii'))
+            else:
                 continue
-            opencr.write(bytes(direction, 'utf-8'))
-        pass
-   except Exception as e:
-        pass
+            pass
+        except Exception as e:
+            pass

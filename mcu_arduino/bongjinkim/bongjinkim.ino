@@ -33,9 +33,9 @@ void beep(){
   delay(500);   
 }
 void serialEvent(){
-  x = Serial.read();  
+  char x = Serial.read();  
   Serial.println(x);
-    if (x == 102){
+    if (x == 'f'){
       a = 0;
       b = 0;
       c = 1;
@@ -46,7 +46,7 @@ void serialEvent(){
         blink(); beep();
       }
     }
-    else if (x == 98){
+    else if (x == 'b'){
       a = 1;
       b = 1;
       c = 0;
@@ -57,7 +57,7 @@ void serialEvent(){
         blink();beep();
       }
     }
-    else if (x == 114){
+    else if (x == 'r'){
       a = 0;
       b = 1;
       c = 1;
@@ -68,7 +68,7 @@ void serialEvent(){
         blink();beep();
       }
     }
-    else if (x == 108){
+    else if (x == 'l'){
       a = 1;
       b = 0;
       c = 0;
@@ -79,7 +79,7 @@ void serialEvent(){
         blink();beep();
       }
     }
-    else if (x == 113){
+    else if (x == 'q'){
       a = 0;
       b = 0;
       c = 0;
