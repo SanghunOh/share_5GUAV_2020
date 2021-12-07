@@ -181,8 +181,13 @@ void loop(){
   if (x == 'w')
   {
     digitalWrite(led_pin_user[0],0);
-    delay(100);
+    delay(500);
     digitalWrite(led_pin_user[1],0);
+    delay(500);
+
+    digitalWrite(led_pin_user[0],1);
+    delay(100);
+    digitalWrite(led_pin_user[1],1);
     delay(100);
     
     first_line();
@@ -192,8 +197,13 @@ void loop(){
     for(i=0; i<2; ++i)
     {
       digitalWrite(led_pin_user[2],0);
-      delay(100);
+      delay(500);
       digitalWrite(led_pin_user[3],0);
+      delay(500);
+
+      digitalWrite(led_pin_user[2],1);
+      delay(100);
+      digitalWrite(led_pin_user[3],1);
       delay(100);
   
       second_line();
@@ -204,8 +214,13 @@ void loop(){
     for(i=0; i<3; ++i)
     {
       digitalWrite(led_pin_user[0],0);
-      delay(100);
+      delay(500);
       digitalWrite(led_pin_user[3],0);
+      delay(500);
+
+      digitalWrite(led_pin_user[0],1);
+      delay(100);
+      digitalWrite(led_pin_user[3],1);
       delay(100);
   
       third_line();
@@ -216,8 +231,13 @@ void loop(){
     for(i=0; i<4; ++i)
     {
       digitalWrite(led_pin_user[1],0);
-      delay(100);
+      delay(500);
       digitalWrite(led_pin_user[2],0);
+      delay(500);
+
+      digitalWrite(led_pin_user[1],1);
+      delay(100);
+      digitalWrite(led_pin_user[2],1);
       delay(100);
   
       fourth_line();
@@ -240,7 +260,7 @@ void loop(){
       for( i=0; i<4; i++ )
       {
         digitalWrite(led_pin_user[i], 0);
-        delay(100);
+        delay(500);
       }
     }
     first_line();
@@ -251,12 +271,16 @@ void loop(){
   else
   {
     digitalWrite(led_pin_user[0],0);
+    delay(500);
+    digitalWrite(led_pin_user[0],1);
     delay(100);
       
-    tone(BDPIN_BUZZER, NOTE_B4, 500);
+    tone(BDPIN_BUZZER, NOTE_B4, 100);
     delay(200);
     noTone(BDPIN_BUZZER);
   }
+  
+
 }
 
 void setup(){
