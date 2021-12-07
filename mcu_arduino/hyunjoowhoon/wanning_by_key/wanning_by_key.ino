@@ -1,5 +1,5 @@
 #include "pitches.h"
-import serial
+
 String x; 
 
 
@@ -16,7 +16,9 @@ void setup() {
 }
 // the loop function runs over and over again forever
 void loop() {
-    keyEvent();
+  while (!Serial.available());
+    x = Serial.readString().toInt();
+    keyEvent(x);
 }
 void blink_and_buzz (int led_pin_1, int led_pin_2, int w_times){
   
@@ -44,7 +46,7 @@ void wave_buzz (int w_times){
       digitalWrite(23, 1);delay(250);
       digitalWrite(22, 1);delay(250);
 
-      while(i=0, i=4, i++){
+      for(i=0; i=4; i++){
         tone(BDPIN_BUZZER, NOTE_G6, 250);
         delay(250);
         noTone(BDPIN_BUZZER);
@@ -52,9 +54,8 @@ void wave_buzz (int w_times){
   } 
 }
 
-void keyEvent(){
-  x = Serial.readString();  
-  Serial.println(x);
+void keyEvent(string x){
+  
     if (x == "f"){
       blink_and_buzz(22,23,1);
     }
