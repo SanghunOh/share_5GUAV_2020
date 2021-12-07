@@ -171,12 +171,14 @@ void fourth_line()
 
 int led_pin = 13;
 int led_pin_user[4] = { BDPIN_LED_USER_1, BDPIN_LED_USER_2, BDPIN_LED_USER_3, BDPIN_LED_USER_4 };
+
 int x;
 int i;
 
 void loop(){
+  while(!Serial.available());
   x = Serial.readString().toInt();
-  if (x == 119) // w
+  if (x == 'w')
   {
     digitalWrite(led_pin_user[0],0);
     delay(100);
@@ -185,7 +187,7 @@ void loop(){
     
     first_line();
   }
-  else if (x == 115)
+  else if (x == 's')
   {
     for(i=0; i<2; ++i)
     {
@@ -197,7 +199,7 @@ void loop(){
       second_line();
     }
   }
-  else if (x == 97)
+  else if (x == 'a')
   {
     for(i=0; i<3; ++i)
     {
@@ -209,7 +211,7 @@ void loop(){
       third_line();
     }
   }
-  else if (x == 100)
+  else if (x == 'd')
   {
     for(i=0; i<4; ++i)
     {
@@ -221,7 +223,7 @@ void loop(){
       fourth_line();
     }
   }
-  else if (x == 101)
+  else if (x == 'e')
   {
     digitalWrite(led_pin, 1);  // set to as HIGH LED is turn-off
     delay(3000);                   // Wait for 0.1 second
@@ -246,8 +248,15 @@ void loop(){
     third_line();
     fourth_line();
   }
-  
-
+  else
+  {
+    digitalWrite(led_pin_user[0],0);
+    delay(100);
+      
+    tone(BDPIN_BUZZER, NOTE_B4, 500);
+    delay(200);
+    noTone(BDPIN_BUZZER);
+  }
 }
 
 void setup(){
