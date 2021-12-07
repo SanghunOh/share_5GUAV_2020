@@ -1,3 +1,10 @@
+#include "pitches.h"
+
+// notes in the melody:
+int melody[] = {
+  NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4
+};
+
 char x;
 
 void repeat(int cnt, char z){
@@ -11,7 +18,7 @@ void repeat(int cnt, char z){
 void reaction(int x, int y, char z, int cnt){
   digitalWrite(x,0);
   digitalWrite(y,0);
-  void repeat(cnt,z);
+  repeat(cnt,z);
   digitalWrite(x,1);
   digitalWrite(y,1);
   delay(1000);
@@ -37,22 +44,22 @@ void loop() {
 
   
   else if(x='f'){
-  void reaction(22,23,NOTE_C4,1)
+  reaction(22,23,NOTE_C4,1);
   }
 
   
   else if(x='b'){
-  void reaction(24,25,NOTE_G3,2)
+  reaction(24,25,NOTE_G3,2);
   }
 
   
   else if(x='r'){
-  void reaction(22,25,NOTE_A3,3)
+  reaction(22,25,NOTE_A3,3);
   }
 
   
   else if(x='l'){
-  void reaction(23,24,NOTE_B3,4)
+  reaction(23,24,NOTE_B3,4);
   }
 
   
