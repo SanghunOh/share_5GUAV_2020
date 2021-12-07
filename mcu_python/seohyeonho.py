@@ -15,7 +15,7 @@ if __name__ == '__main__':
             direction = input('Enter a direction foreward(f), backward(b), right(r), left(l): ')
             if direction == 'q' :
                 break
-            elif direction != 'f' | 'b' | 'r' | 'l' :
+            elif direction != 'f' & 'b' & 'r' & 'l' :
                 print("잘못된 방향입니다.")
                 continue
             opencr.write(bytes(direction, 'utf-8'))
