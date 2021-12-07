@@ -8,6 +8,7 @@ def func_recev(ip,port):
     # 바인딩
     func_message(recevier)
 
+  
 
 def func_message(recevier):
     while True:

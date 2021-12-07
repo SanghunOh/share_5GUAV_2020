@@ -7,4 +7,5 @@ if __name__ == '__main__':
         msg = "안녕하세요 바람이 적당히 시원해 기분이 너무 좋아요"
         sender.sendto(str.encode(msg),('192.168.16.19', 7778))
         check_msg = sender.recvfrom(1024)
-        print(check_msg[0])
+        check_msg = check_msg[0].decode('euc-kr')
+        print(check_msg)
