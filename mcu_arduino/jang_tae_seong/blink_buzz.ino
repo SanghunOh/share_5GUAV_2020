@@ -171,57 +171,79 @@ void fourth_line()
 
 int led_pin = 13;
 int led_pin_user[4] = { BDPIN_LED_USER_1, BDPIN_LED_USER_2, BDPIN_LED_USER_3, BDPIN_LED_USER_4 };
+
 int x;
 int i;
 
 void loop(){
+  while(!Serial.available());
   x = Serial.readString().toInt();
-  if (x == 119) // w
+  if (x == 'w')
   {
     digitalWrite(led_pin_user[0],0);
-    delay(100);
+    delay(500);
     digitalWrite(led_pin_user[1],0);
+    delay(500);
+
+    digitalWrite(led_pin_user[0],1);
+    delay(100);
+    digitalWrite(led_pin_user[1],1);
     delay(100);
     
     first_line();
   }
-  else if (x == 115)
+  else if (x == 's')
   {
     for(i=0; i<2; ++i)
     {
       digitalWrite(led_pin_user[2],0);
-      delay(100);
+      delay(500);
       digitalWrite(led_pin_user[3],0);
+      delay(500);
+
+      digitalWrite(led_pin_user[2],1);
+      delay(100);
+      digitalWrite(led_pin_user[3],1);
       delay(100);
   
       second_line();
     }
   }
-  else if (x == 97)
+  else if (x == 'a')
   {
     for(i=0; i<3; ++i)
     {
       digitalWrite(led_pin_user[0],0);
-      delay(100);
+      delay(500);
       digitalWrite(led_pin_user[3],0);
+      delay(500);
+
+      digitalWrite(led_pin_user[0],1);
+      delay(100);
+      digitalWrite(led_pin_user[3],1);
       delay(100);
   
       third_line();
     }
   }
-  else if (x == 100)
+  else if (x == 'd')
   {
     for(i=0; i<4; ++i)
     {
       digitalWrite(led_pin_user[1],0);
-      delay(100);
+      delay(500);
       digitalWrite(led_pin_user[2],0);
+      delay(500);
+
+      digitalWrite(led_pin_user[1],1);
+      delay(100);
+      digitalWrite(led_pin_user[2],1);
       delay(100);
   
       fourth_line();
     }
   }
-  else if (x == 101)
+  else if (x == 'e')
   {
     digitalWrite(led_pin, 1);  // set to as HIGH LED is turn-off
     delay(3000);                   // Wait for 0.1 second
@@ -238,13 +260,24 @@ void loop(){
       for( i=0; i<4; i++ )
       {
         digitalWrite(led_pin_user[i], 0);
-        delay(100);
+        delay(500);
       }
     }
     first_line();
     second_line();
     third_line();
     fourth_line();
+  }
+  else
+  {
+    digitalWrite(led_pin_user[0],0);
+    delay(500);
+    digitalWrite(led_pin_user[0],1);
+    delay(100);
+      
+    tone(BDPIN_BUZZER, NOTE_B4, 100);
+    delay(200);
+    noTone(BDPIN_BUZZER);
   }
   
 
