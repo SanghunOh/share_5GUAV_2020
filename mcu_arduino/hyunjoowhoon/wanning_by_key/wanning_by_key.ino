@@ -3,6 +3,7 @@
 String x; 
 
 
+
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
   Serial.begin(115200);
@@ -16,8 +17,10 @@ void setup() {
 }
 // the loop function runs over and over again forever
 void loop() {
-  while (!Serial.available());
-    x = Serial.readString().toInt();
+  x = Serial.readString().toInt();
+
+  while (Serial.available());
+    x = Serial.read();
     keyEvent(x);
 }
 void blink_and_buzz (int led_pin_1, int led_pin_2, int w_times){
@@ -54,7 +57,7 @@ void wave_buzz (int w_times){
   } 
 }
 
-void keyEvent(string x){
+void keyEvent(x){
   
     if (x == "f"){
       blink_and_buzz(22,23,1);

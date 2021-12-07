@@ -5,6 +5,7 @@ import cv2 as cv
 def open_cr(key):
     opencr.write(bytes(key, 'utf-8'))
     value = opencr.readline()
+    time.sleep(0.5)
 
 def key_push() : 
     
@@ -50,6 +51,7 @@ if __name__ == '__main__':
 
     try:
         key_push()
+
         # pushed = input("알맞은 입력을 눌러주세요.( f / b / l / r, 취소: q 혹은 esc) :  ")
         cv.destroyAllWindows()
 
