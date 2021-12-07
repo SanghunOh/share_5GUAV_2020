@@ -3,7 +3,7 @@ import serial
 import time
 import cv2 as cv
 
-panel = cv.imread('mcu_arduino/hyunjoowhoon/Turtlebot3_logo.jpg')
+panel = cv.imread('/home/ubuntu/develops/share_5GUAV_2020/mcu_arduino/hyunjoowhoon/Turtlebot3_logo.jpg', cv.IMREAD_COLOR)
 cv.imshow('arduino control', panel)
 
 
