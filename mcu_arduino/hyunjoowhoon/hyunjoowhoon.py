@@ -7,13 +7,9 @@ panel = cv.imread('mcu_arduino/hyunjoowhoon/Turtlebot3_logo.jpg')
 cv.imshow('arduino control', panel)
 
 
-# arduino = serial.Serial(port='/dev/ttyACM0', baudrate=115200, timeout=1)
+opencr = serial.Serial(port='/dev/ttyACM0', baudrate=115200, timeout=1)
 
-# def write_read(x):
-#     arduino.write(bytes(x, 'utf-8'))
-#     time.sleep(0.05)
-#     data = arduino.readline()
-#     return data
+
 
 
 def key_push(key) : 
@@ -50,6 +46,10 @@ if __name__ == '__main__':
 
     try:
         pushed = input("알맞은 입력을 눌러주세요.( f / b / l / r, 취소: q 혹은 esc) :  ")
+        opencr.write(bytes(pushed, 'utf-8'))
+        value = opencr.readline()
+        print('Result : ', value)
+        
         print(key_push(pushed))
 
         cv.destroyAllWindows()
