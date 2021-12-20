@@ -25,7 +25,7 @@ void loop() {
 }
 void blink_and_buzz (int led_pin_1, int led_pin_2, int w_times){
   
-  for (int i; i<w_times;){      
+  for (int i; i<w_times; i++){      
       digitalWrite(led_pin_1, 0);delay(500);    
       digitalWrite(led_pin_2, 0);delay(500);
       digitalWrite(led_pin_1, 1);
