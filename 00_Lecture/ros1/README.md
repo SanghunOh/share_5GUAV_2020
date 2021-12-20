@@ -1,2 +1,3 @@
-# share_5GUAV_2020
-RAPA 5G UAV 2020 year 
+# ROS1
+install python catkin : 
+~$ sudo apt-get install python3-catkin-tools
