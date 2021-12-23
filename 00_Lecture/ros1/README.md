@@ -15,3 +15,8 @@ SBC :
 ~$rosparam set cv_camera/image_height 280  
 ~$rosrun cv_camera cv_camera_node  
 PC : ~$rqt   
+### gazebo world
+singler :  
+~$roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch  
+mulipler :  
+~$roslaunch turtlebot3_gazebo multi_turtlebot3.launch  
