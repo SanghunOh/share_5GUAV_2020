@@ -20,3 +20,5 @@ singler :
 ~$roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch  
 mulipler :  
 ~$roslaunch turtlebot3_gazebo multi_turtlebot3.launch  
+ex) copy below directory with multi_turtlebot3_empty_world.launch  
+target Dir : ~/Develops/ros1/turtlebot_ws/src/turtlebot3_simulations/turtlebot3_gazebo/launch
