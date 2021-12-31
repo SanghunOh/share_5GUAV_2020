@@ -27,3 +27,7 @@ target Dir : ~/Develops/ros1/turtlebot_ws/src/turtlebot3_simulations/turtlebot3_
 $ git clone -b feature-raspicam https://github.com/ROBOTIS-GIT/turtlebot3_autorace_2020.git     
 #### refer: https://emanual.robotis.com/docs/en/platform/turtlebot3/autonomous_driving/#camera-calibration
 - Copy and paste the data from ost.yaml to camerav2_320x240_30fps.yaml  
+
+### ros package with setup.py without stop
+getcharwithoutstop.py, setup.py    
+
